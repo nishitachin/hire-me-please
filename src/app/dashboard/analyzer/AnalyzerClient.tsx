@@ -70,7 +70,7 @@ export default function AnalyzerClient({ savedBackground, history }: AnalyzerCli
         selected={selected}
         onSelect={handleSelectHistory}
         onNew={handleNew}
-        newLabel="New analysis"
+        newLabel="New Analysis"
         getLabel={(item) => item.result?.job_title ?? "Analysis"}
         getSub={(item) =>
           new Date(item.created_at).toLocaleDateString("en-US", {
@@ -144,7 +144,7 @@ export default function AnalyzerClient({ savedBackground, history }: AnalyzerCli
         ) : (
           <div className="max-w-2xl mx-auto space-y-4">
             <button onClick={handleNew} className="btn-ghost text-xs px-3 py-2">
-              ← New analysis
+              ← New Analysis
             </button>
             <AnalysisResults result={result} />
           </div>

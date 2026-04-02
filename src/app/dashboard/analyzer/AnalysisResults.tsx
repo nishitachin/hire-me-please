@@ -62,7 +62,7 @@ export default function AnalysisResults({ result }: AnalysisResultsProps) {
 
       {/* Skills breakdown */}
       <div className="card">
-        <h4 className="text-sm font-medium text-gray-900 mb-4">Skill breakdown</h4>
+        <h4 className="text-sm font-medium text-gray-900 mb-4">Skill Breakdown</h4>
         <div className="space-y-3">
           {result.skills.map((skill) => {
             const cfg = levelConfig[skill.level];
@@ -90,7 +90,7 @@ export default function AnalysisResults({ result }: AnalysisResultsProps) {
       {/* Learning plan */}
       {result.learning_plan.length > 0 && (
         <div className="card">
-          <h4 className="text-sm font-medium text-gray-900 mb-4">Your learning plan</h4>
+          <h4 className="text-sm font-medium text-gray-900 mb-4">Your Learning Plan</h4>
           <div className="space-y-3">
             {result.learning_plan.map((item, i) => (
               <div
@@ -115,7 +115,7 @@ export default function AnalysisResults({ result }: AnalysisResultsProps) {
       {/* Missing skills pills */}
       {result.missing_skills.length > 0 && (
         <div className="card">
-          <h4 className="text-sm font-medium text-gray-900 mb-3">Skills to develop</h4>
+          <h4 className="text-sm font-medium text-gray-900 mb-3">Skills To Develop</h4>
           <div className="flex flex-wrap gap-2">
             {result.missing_skills.map((skill) => (
               <span

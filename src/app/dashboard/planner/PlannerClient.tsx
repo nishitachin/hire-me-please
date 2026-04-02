@@ -98,7 +98,7 @@ export default function PlannerClient({ savedBackground, history }: PlannerClien
               className="rounded-xl px-5 py-4 text-sm leading-relaxed"
               style={{ background: "var(--color-brand-50)", color: "var(--color-brand-700)" }}
             >
-              ✦ Tell Claude what you want to accomplish this week and it will build you a realistic day-by-day plan.
+              ✦ What do you want to accomplish this week? Let's build you a realistic day-by-day plan.
               {savedBackground && " Your background is loaded from your profile."}
             </div>
 

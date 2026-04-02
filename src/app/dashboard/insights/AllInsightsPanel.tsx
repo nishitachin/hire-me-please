@@ -50,10 +50,10 @@ export default function AIInsightsPanel({ stats }: { stats: InsightStats }) {
         <div className="text-2xl">✦</div>
         <div>
           <p className="text-sm font-medium" style={{ color: "var(--color-brand-700)" }}>
-            Get AI insights on your search
+            Get AI insights on your search!
           </p>
           <p className="text-xs mt-1" style={{ color: "var(--color-brand-500)" }}>
-            Claude will analyze your data and tell you what&apos;s working
+            Let's analyze your data and see what&apos;s working.
           </p>
         </div>
         {error && <p className="text-xs text-red-600">{error}</p>}
