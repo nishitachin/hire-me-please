@@ -7,7 +7,7 @@ import { createClient } from "@/lib/supabase/client";
 const navItems = [
   {
     href: "/dashboard/tracker",
-    label: "Job tracker",
+    label: "Job Tracker",
     icon: (
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="1.5" y="1.5" width="13" height="13" rx="2"/>

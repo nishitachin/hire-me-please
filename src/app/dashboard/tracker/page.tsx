@@ -40,8 +40,8 @@ export default async function TrackerPage() {
   return (
     <>
       <TopBar
-        title="Job tracker"
-        subtitle={`${stats.total} job${stats.total !== 1 ? "s" : ""} tracked`}
+        title="Job Tracker"
+        subtitle={`${stats.total} job${stats.total !== 1 ? "s" : ""} tracked❤️`}
         actions={<AddJobButton />}
       />
 
