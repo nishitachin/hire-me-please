@@ -37,6 +37,7 @@ export default function JobsTable({ jobs }: JobsTableProps) {
   return (
     <>
       <div className="card p-0 overflow-hidden">
+        <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-gray-100">
@@ -45,7 +46,7 @@ export default function JobsTable({ jobs }: JobsTableProps) {
               <th className="text-left text-xs font-medium text-gray-400 px-3 py-3.5">Role</th>
               <th className="text-left text-xs font-medium text-gray-400 px-3 py-3.5">Status</th>
               <th className="text-left text-xs font-medium text-gray-400 px-3 py-3.5">Applied</th>
-              <th className="text-left text-xs font-medium text-gray-400 px-3 py-3.5">Notes</th>
+              <th className="hidden sm:table-cell text-left text-xs font-medium text-gray-400 px-3 py-3.5">Notes</th>
               <th className="px-3 py-3.5 w-16"></th>
             </tr>
           </thead>
@@ -114,7 +115,7 @@ export default function JobsTable({ jobs }: JobsTableProps) {
                 </td>
 
                 {/* notes — truncated, full text in modal */}
-                <td className="px-3 py-3.5 text-gray-400 text-xs max-w-[180px] truncate">
+                <td className="hidden sm:table-cell px-3 py-3.5 text-gray-400 text-xs max-w-[180px] truncate">
                   {job.notes || "—"}
                 </td>
 
@@ -148,6 +149,7 @@ export default function JobsTable({ jobs }: JobsTableProps) {
             ))}
           </tbody>
         </table>
+        </div>
       </div>
 
       {/* edit modal */}

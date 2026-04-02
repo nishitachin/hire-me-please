@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
+import { useSidebar } from "./SidebarContext";
 
 const navItems = [
   {
@@ -74,7 +75,7 @@ const navItems = [
   },
 ];
 
-export default function Sidebar() {
+function SidebarContent({ onNavClick }: { onNavClick?: () => void }) {
   const pathname = usePathname();
   const router = useRouter();
   const supabase = createClient();
@@ -86,8 +87,7 @@ export default function Sidebar() {
   }
 
   return (
-    <aside className="w-52 shrink-0 h-screen sticky top-0 bg-white border-r border-gray-100 flex flex-col">
-
+    <>
       {/* logo */}
       <div className="px-5 py-5 border-b border-gray-100">
         <div className="flex items-center gap-2.5">
@@ -106,6 +106,7 @@ export default function Sidebar() {
             <Link
               key={item.href}
               href={item.href}
+              onClick={onNavClick}
               className={`flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm transition-colors duration-100 ${
                 active
                   ? "bg-brand-50 text-brand-700 font-medium"
@@ -136,7 +137,29 @@ export default function Sidebar() {
           Sign out
         </button>
       </div>
+    </>
+  );
+}
 
-    </aside>
+export default function Sidebar() {
+  const { isOpen, close } = useSidebar();
+
+  return (
+    <>
+      {/* Mobile overlay + drawer */}
+      {isOpen && (
+        <div className="md:hidden fixed inset-0 z-40 flex">
+          <div className="absolute inset-0 bg-black/30" onClick={close} />
+          <aside className="relative w-52 h-full bg-white border-r border-gray-100 flex flex-col z-50">
+            <SidebarContent onNavClick={close} />
+          </aside>
+        </div>
+      )}
+
+      {/* Desktop sidebar — always visible */}
+      <aside className="hidden md:flex w-52 shrink-0 h-screen sticky top-0 bg-white border-r border-gray-100 flex-col">
+        <SidebarContent />
+      </aside>
+    </>
   );
 }
