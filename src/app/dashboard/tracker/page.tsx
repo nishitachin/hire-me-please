@@ -45,7 +45,7 @@ export default async function TrackerPage() {
         actions={<AddJobButton />}
       />
 
-      <div className="flex-1 p-6 space-y-5">
+      <div className="flex-1 p-4 sm:p-6 space-y-5">
 
         {/* empty state welcome — only show before they've added anything */}
         {stats.total === 0 && (
@@ -59,7 +59,7 @@ export default async function TrackerPage() {
 
         {/* stats row */}
         {stats.total > 0 && (
-          <div className="grid grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <Card label="Total tracked"  value={stats.total} />
             <Card label="Interviewing"   value={stats.interviewing} />
             <Card
