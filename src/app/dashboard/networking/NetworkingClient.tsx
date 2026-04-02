@@ -86,7 +86,7 @@ export default function NetworkingClient({ savedBackground, history }: Networkin
               className="rounded-xl px-5 py-4 text-sm leading-relaxed"
               style={{ background: "var(--color-brand-50)", color: "var(--color-brand-700)" }}
             >
-              ✦ Paste a job posting and Claude will write three ready-to-send LinkedIn messages.
+              ✦ Paste a job posting to see three ready-to-send LinkedIn messages.
               {savedBackground && " Your background is pre-filled from your profile."}
             </div>
 
